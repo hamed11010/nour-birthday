@@ -1,0 +1,401 @@
+/* Barcelona Birthday Website - Complete CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Base Styles */
+:root {
+  --barca-blue: #004D98;
+  --barca-red: #A50044;
+  --barca-yellow: #FEBE10;
+  --barca-cream: #FEFEFE;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: white;
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* Background Stripes */
+.background-stripes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+
+.stripe {
+  flex: 1;
+  height: 100%;
+}
+
+.blue {
+  background-color: var(--barca-blue);
+}
+
+.red {
+  background-color: var(--barca-red);
+}
+
+/* Header */
+.birthday-header {
+  text-align: center;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--barca-cream);
+}
+
+.birthday-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--barca-blue);
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.heart {
+  color: var(--barca-red);
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Main Content */
+.content {
+  position: relative;
+  text-align: center;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+.logo-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid var(--barca-cream);
+}
+
+.barca-logo {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+
+.barca-logo:hover {
+  transform: scale(1.05);
+}
+
+.click-text {
+  font-size: 1.5rem;
+  color: var(--barca-blue);
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+.hidden-message {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.6s ease-out;
+  font-size: 1.8rem;
+  color: var(--barca-red);
+  font-weight: bold;
+}
+
+.hidden-message.show {
+  max-height: 200px;
+  opacity: 1;
+  animation: textPop 0.8s ease;
+}
+
+@keyframes textPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Player Wishes Section */
+.player-wishes {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.player-wishes h2 {
+  color: var(--barca-blue);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.player-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 3px solid var(--barca-blue);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.player-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--barca-blue);
+  margin: 0 auto 15px;
+  display: block;
+}
+
+.birthday-message {
+  font-style: italic;
+  color: var(--barca-red);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Messi Tribute Section */
+.messi-tribute {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--barca-blue), var(--barca-red));
+  color: white;
+  text-align: center;
+}
+
+.messi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.messi-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 15px;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.messi-message {
+  max-width: 600px;
+}
+
+.messi-message h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--barca-yellow);
+}
+
+.messi-message p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.voice-message {
+  background: var(--barca-yellow);
+  color: #333;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.voice-message:hover {
+  transform: scale(1.05);
+  background: white;
+}
+
+/* Trophy Section */
+.trophy-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.trophy-section h2 {
+  color: var(--barca-blue);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.trophies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin: 30px 0;
+}
+
+.trophy {
+  background: white;
+  border-radius: 15px;
+  padding: 25px 20px;
+  transition: all 0.3s ease;
+  border: 3px solid var(--barca-red);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trophy:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.trophy-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 0 auto 15px;
+  display: block;
+  transition: all 0.5s ease;
+}
+
+.trophy:hover .trophy-img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.trophy-message {
+  font-weight: bold;
+  color: var(--barca-blue);
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes flash {
+  0% { background-color: rgba(255, 255, 255, 0.95); }
+  50% { background-color: rgba(255, 215, 0, 0.8); }
+  100% { background-color: rgba(255, 255, 255, 0.95); }
+}
+
+.logo-spin {
+  animation: spin 0.8s ease-out;
+}
+
+.color-flash {
+  animation: flash 1s ease;
+}
+
+/* Confetti */
+.confetti {
+  position: fixed;
+  top: -10px;
+  z-index: 1000;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: fall linear forwards;
+}
+
+.mini-confetti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: mini-fall 2s linear forwards;
+  z-index: 1000;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes mini-fall {
+  to {
+    transform: translateY(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .messi-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .player-wishes h2,
+  .trophy-section h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .birthday-header,
+  .content,
+  .player-wishes,
+  .messi-tribute,
+  .trophy-section {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .players-grid,
+  .trophies-grid {
+    grid-template-columns: 1fr;
+  }
+}
